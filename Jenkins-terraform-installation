@@ -11,13 +11,6 @@ pipeline {
                 sh 'terraform apply --auto-approve'
             }
         }
-          stage('terraform-Init & apply -prod') {
-            steps {
-                sh returnStatus: true, script: 'terraform workspace new prod'
-                sh 'terraform init'
-                sh 'terraform apply --auto-approve'
-            }
-        }
     }
 }
 
